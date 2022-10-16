@@ -12,10 +12,17 @@ void Fillrand(float  arr[ROWS][COLS], const int rows, const int cols);
 void Fillrand(char krr[ROWS][COLS], const int rows, const int cols);
 void Fillrand(char k[], const int n);
 
-void Print(int  arr[], const int n);
+//template -  показывает создание шаблона
+template<typename T>
+
+void Print( T  arr[], const int n);
+
 void Print(double arr[], const int n);
 void Print(float  b[], const int n);
-void Print(int arr[ROWS][COLS], const int rows, const int cols);
+
+template<typename T>
+
+void Print(T arr[ROWS][COLS], const int rows, const int cols);
 void Print(float arr[ROWS][COLS], const int rows, const int cols);
 void Print(char krr[ROWS][COLS], const int rows, const int cols);
 void Print(char k[], const int n);
@@ -200,32 +207,18 @@ void Fillrand(char k[], const int n)
 	}
 }
 
+template<typename T>
+void Print(T arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
 
-void Print(int arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(float b[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << b[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(float  arr[ROWS][COLS], const int rows, const int cols)
+template<typename T>
+void Print(T  arr[ROWS][COLS], const int rows, const int cols)
 {
 	for (int i = 0; i < COLS; i++)
 	{
@@ -238,44 +231,7 @@ void Print(float  arr[ROWS][COLS], const int rows, const int cols)
 	}
 
 }
-void Print(int arr[ROWS][COLS], const int rows, const int cols)
-{
-	for (int i = 0; i < COLS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << arr[i][j] << "\t";
 
-		}
-		cout << endl;
-	}
-
-}
-void Print(char krr[ROWS][COLS], const int rows, const int cols)
-{
-	for (int i = 0; i < COLS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << krr[i][j] << "\t";
-
-		}
-		cout << endl;
-	}
-
-}
-void Print(char k[], const int n)
-{
-	for (int i = 0; i < COLS; i++)
-
-	{
-		cout << k[i] << "\t";
-
-	}
-	cout << endl;
-
-
-}
 
 int sum(int arr[], const int n)
 {
