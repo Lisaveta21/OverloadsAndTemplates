@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 const int ROWS = 3;
@@ -51,9 +51,9 @@ int maxValue(float  b[], const int n);
 int maxValue(char krr[ROWS][COLS], const int rows, const int cols);
 int maxValue(char k[], const int n);
 
-//void shiftleft(int arr[], const int n, int number_of_shifts);
-//void shiftright(int arr[], const int n, int number_of_shifts);
-//void sort(int arr[], const int n);
+void shiftleft(int arr[], const int n, int number_of_shifts);
+void shiftright(int arr[], const int n, int number_of_shifts);
+void sort(int arr[], const int n);
 
 
 void main()
@@ -67,14 +67,14 @@ void main()
 	Fillrand(arr, n);
 	Print(arr, n);
 
-	cout << "Ñóììà" << sum(arr, n) << endl;
-	cout << "Ñðåäíåå àðèôìåòè÷åñêîå" << avg(arr, n) << endl;
-	cout << "Ìèíèìóì" << minValue(arr, n) << endl;
-	cout << "Ìàêñèìóì " << maxValue(arr, n) << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð°" << sum(arr, n) << endl;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ" << avg(arr, n) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼ÑƒÐ¼" << minValue(arr, n) << endl;
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼ÑƒÐ¼ " << maxValue(arr, n) << endl;
 	/*sort(arr, n);*/
 	/*Print(arr, n);*/
 	/*int number_of_shifts;
-	cout << "êîëè÷åñòâî ñäâèãîâ "; cin >> number_of_shifts;
+	cout << "ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ´Ð²Ð¸Ð³Ð¾Ð² "; cin >> number_of_shifts;
 	shiftleft(arr, n, number_of_shifts);
 	shiftright(arr, n, number_of_shifts);
 	Print(arr, n);*/
@@ -93,24 +93,24 @@ void main()
 	int krr[rows][cols];
 	Fillrand(krr, rows, cols);
 	Print(krr, rows, cols);
-	cout << "Ñóììà ýëåìåíòîâ: " << sum(krr, ROWS, COLS) << endl;
-	cout << "Ñðåäíåå àðèôìåòè÷åñêîå" << avg(krr, ROWS, COLS) << endl;
-	cout << "Ìèíèìóì" << minValue(krr, ROWS, COLS) << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²: " << sum(krr, ROWS, COLS) << endl;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ" << avg(krr, ROWS, COLS) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼ÑƒÐ¼" << minValue(krr, ROWS, COLS) << endl;
 
 	
 	int i_arr_3[ROWS][COLS];
-	cout << "Ñóììà ýëåìåíòîâ: " << sum(i_arr_3, ROWS, COLS) << endl;
-	cout << "Ñðåäíåå àðèôìåòè÷åñêîå" << avg(i_arr_3, ROWS, COLS) << endl;
-	cout << "Ìèíèìóì" << minValue(i_arr_3, ROWS, COLS) << endl;
-	cout << "Ìèíèìóì" << maxValue(i_arr_3, ROWS, COLS) << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²: " << sum(i_arr_3, ROWS, COLS) << endl;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ" << avg(i_arr_3, ROWS, COLS) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼ÑƒÐ¼" << minValue(i_arr_3, ROWS, COLS) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼ÑƒÐ¼" << maxValue(i_arr_3, ROWS, COLS) << endl;
 
 	int k[SIZE];
 	Fillrand(k, SIZE);
 	Print(k, SIZE);
-	cout << "Ñóììà" << sum(k, n) << endl;
-	cout << "Ñðåäíåå àðèôìåòè÷åñêîå" << avg(k, n) << endl;
-	cout << "Ìèíèìóì" << minValue(k, n) << endl;
-	cout << "Ìàêñèìóì " << maxValue(k, n) << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð°" << sum(k, n) << endl;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ" << avg(k, n) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼ÑƒÐ¼" << minValue(k, n) << endl;
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼ÑƒÐ¼ " << maxValue(k, n) << endl;
 
 	/*double d_arr_2[ROWS][COLS];
 	Fillrand(d_arr_2, ROWS, COLS);
@@ -119,18 +119,18 @@ void main()
 	int i_arr_2[ROWS][COLS];
 	Fillrand(i_arr_2, rows, cols);
 	Print(i_arr_2, rows, cols);
-	cout << "Ñóììà ýëåìåíòîâ: " << sum(i_arr_2, ROWS, COLS) << endl;
-	cout << "Ñðåäíåå àðèôìåòè÷åñêîå" << avg(i_arr_2, ROWS, COLS) << endl;
-	cout << "Ìèíèìóì" << minValue(i_arr_2, ROWS, COLS) << endl;
-	cout << "Ìàêñèìóì " << maxValue(i_arr_2, ROWS, COLS) << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²: " << sum(i_arr_2, ROWS, COLS) << endl;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ" << avg(i_arr_2, ROWS, COLS) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼ÑƒÐ¼" << minValue(i_arr_2, ROWS, COLS) << endl;
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼ÑƒÐ¼ " << maxValue(i_arr_2, ROWS, COLS) << endl;
 
 	int i_arr[SIZE];
 	Fillrand(i_arr, n);
 	Print(i_arr, n);
-	cout << "Ñóììà" << sum(i_arr, n) << endl;
-	cout << "Ñðåäíåå àðèôìåòè÷åñêîå" << avg(i_arr, n) << endl;
-	cout << "Ìèíèìóì" << minValue(i_arr, n) << endl;
-	cout << "Ìàêñèìóì " << maxValue(i_arr, n) << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð°" << sum(i_arr, n) << endl;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ" << avg(i_arr, n) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼ÑƒÐ¼" << minValue(i_arr, n) << endl;
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼ÑƒÐ¼ " << maxValue(i_arr, n) << endl;
 }
 
 void Fillrand(int  arr[], const int n)
@@ -374,10 +374,10 @@ double avg(float   arr[ROWS][COLS], const int rows, const int cols)
 {
 	return (double)sum(arr, ROWS, COLS) / (ROWS*COLS);
 }
-//double avg(float   krr[ROWS][COLS], const int rows, const int cols)
-//{
-//	return (double)sum(krr, ROWS, COLS) / COLS/ROWS;
-//}
+double avg(float   krr[ROWS][COLS], const int rows, const int cols)
+{
+	return (double)sum(krr, ROWS, COLS) / COLS/ROWS;
+}
 double avg(char k[], const int n)
 {
 	return (double)sum(k, n) / n;
@@ -549,37 +549,38 @@ void sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 }
 
-//void shiftleft(int arr[], const int n, int number_of_shifts)
-//{
-//	for (int i = 0; i < number_of_shifts; i++)
-//	{
-//		int buffer = arr[0];
-//		for (int i = 0; i < n; i++)
-//		{
-//			arr[i] = arr[i + 1];
-//		}
-//		arr[n - 1] = buffer;
-//	}
-//}
-//	void shiftright(int arr[], const int n, int number_of_shifts)
-//	{
-//		shiftleft(arr, n, n - number_of_shifts);
-//	
-//	}
-//
-//	void sort(int arr[], const int n)
-//	{
-//		for (int i = 0; i < n; i++)
-//		
-//		{
-//			for (int j = i + 1; j < n; j++)
-//			{
-//				if (arr[j] < arr[i])
-//				{
-//					int buffer = arr[i];
-//					arr[i] = arr[j];
-//					arr[j] = buffer;
-//				}
-//			}
-//		}
-//	}
+void shiftleft(int arr[], const int n, int number_of_shifts)
+{
+	for (int i = 0; i < number_of_shifts; i++)
+	{
+		int buffer = arr[0];
+		for (int i = 0; i < n; i++)
+		{
+			arr[i] = arr[i + 1];
+		}
+		arr[n - 1] = buffer;
+	}
+}
+	void shiftright(int arr[], const int n, int number_of_shifts)
+	{
+		shiftleft(arr, n, n - number_of_shifts);
+	
+	}
+
+	void sort(int arr[], const int n)
+	{
+		for (int i = 0; i < n; i++)
+		
+		{
+			for (int j = i + 1; j < n; j++)
+			{
+				if (arr[j] < arr[i])
+				{
+					int buffer = arr[i];
+					arr[j] = buffer;
+				}
+			}
+		}
+	}
+
+
